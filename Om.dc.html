@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/organic-d9ea468b-de7b-4188-b4ff-1169e295ce0e/styles.css">
+  <script src="_ds/organic-d9ea468b-de7b-4188-b4ff-1169e295ce0e/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    body a { color: var(--color-accent-2-700); }
+    body a:hover { color: var(--color-accent-2-900); }
+    .site-nav a[aria-current="page"] { color: var(--color-accent-2-700); }
+    .site-nav a:hover { color: var(--color-accent-2-700); }
+    .cta-primary { background: var(--color-accent-2-600); color: var(--color-bg); }
+    .cta-primary:hover { background: var(--color-accent-2-700); }
+    .cta-primary:active { background: var(--color-accent-2-800); }
+  </style>
+</helmet>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 var(--space-6)">
+  <nav class="nav site-nav">
+    <a class="nav-brand" href="./index.dc.html">Eas Eva-Marie</a>
+    <a href="./index.dc.html">Hem</a>
+    <a href="./Om.dc.html" aria-current="page">Om mig</a>
+    <a href="./Galleri.dc.html">Galleri</a>
+    <a href="./Kontakt.dc.html">Kontakt</a>
+    <a class="btn btn-primary cta-primary" href="./Kontakt.dc.html">Kontakta mig</a>
+  </nav>
+</div>
+
+<div style="max-width:1200px;margin:0 auto;padding:var(--space-8) var(--space-6)">
+
+  <section style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:var(--space-8);align-items:center">
+    <image-slot id="om-portrait" class="washed" shape="rounded" radius="28" placeholder="Porträtt av Eva-Marie i ateljén" style="width:100%;height:440px"></image-slot>
+    <div>
+      <h6 style="color:var(--color-accent-2-700)">Om mig</h6>
+      <h1 style="max-width:14ch">Sömnad har alltid varit mitt sätt att skapa</h1>
+      <p style="font-size:16px;opacity:0.85">Jag heter Eva-Marie och syr plagg på beställning – allt från balklänningar och bröllopsklänningar till barnkläder och vardagsplagg. För mig handlar sömnad om att lyssna: på vad du önskar, hur du vill må i plagget och vad som passar just din kropp.</p>
+      <p style="font-size:16px;opacity:0.85">Varje plagg mäts, provas och justeras tills det sitter precis rätt. Inget är massproducerat – allt görs för hand, med tid och omtanke, i min lilla ateljé.</p>
+      <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;margin-top:var(--space-3)">
+        <span class="tag tag-accent-2">Måttanpassat</span>
+        <span class="tag tag-accent-2">Personlig service</span>
+        <span class="tag tag-accent-2">Hantverk med omtanke</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:calc(var(--space-8) * 1.6)">
+    <h6 style="color:var(--color-accent-2-700)">Process</h6>
+    <h2>Så går en beställning till</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4);margin-top:var(--space-4)">
+      <div>
+        <div style="width:44px;height:44px;border-radius:50%;background:var(--color-accent-2-600);color:var(--color-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">1</div>
+        <h4 style="margin-top:var(--space-3)">Kontakt</h4>
+        <p class="text-muted">Du hör av dig med din idé – via mejl, Instagram eller bokningslänken.</p>
+      </div>
+      <div>
+        <div style="width:44px;height:44px;border-radius:50%;background:var(--color-accent-2-600);color:var(--color-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">2</div>
+        <h4 style="margin-top:var(--space-3)">Mått &amp; önskemål</h4>
+        <p class="text-muted">Vi träffas, tar mått och pratar tyg, snitt och detaljer.</p>
+      </div>
+      <div>
+        <div style="width:44px;height:44px;border-radius:50%;background:var(--color-accent-2-600);color:var(--color-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">3</div>
+        <h4 style="margin-top:var(--space-3)">Provsömnad</h4>
+        <p class="text-muted">Plagget provas och justeras tills allt sitter precis rätt.</p>
+      </div>
+      <div>
+        <div style="width:44px;height:44px;border-radius:50%;background:var(--color-accent-2-600);color:var(--color-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">4</div>
+        <h4 style="margin-top:var(--space-3)">Leverans</h4>
+        <p class="text-muted">Ditt färdiga plagg är klart att hämtas eller skickas hem.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:calc(var(--space-8) * 1.6);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+    <div class="card elev-sm">
+      <div class="card-kicker">Öppettider</div>
+      <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--color-divider)"><span>Måndag–fredag</span><span>10–17</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid var(--color-divider)"><span>Lördag</span><span>Efter bokning</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0"><span>Söndag</span><span>Stängt</span></div>
+    </div>
+    <div class="card elev-sm">
+      <div class="card-kicker">Ateljén</div>
+      <p class="card-body" style="display:flex;align-items:center;gap:8px;font-size:14px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        Trädgårdsgatan 4, Lund — besök sker efter bokad tid
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<footer style="background:var(--color-surface);margin-top:calc(var(--space-8) * 2)">
+  <div style="max-width:1200px;margin:0 auto;padding:var(--space-6);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4)">
+    <div>
+      <div class="nav-brand">Eas Eva-Marie</div>
+      <p class="text-muted" style="margin-top:var(--space-2)">Sömnad på beställning, med omtanke för varje detalj.</p>
+    </div>
+    <div style="display:flex;gap:var(--space-6);flex-wrap:wrap">
+      <a href="./Om.dc.html">Om mig</a>
+      <a href="./Galleri.dc.html">Galleri</a>
+      <a href="./Kontakt.dc.html">Kontakt</a>
+      <a href="./Kontakt.dc.html">hej@easevamarie.se</a>
+    </div>
+  </div>
+</footer>
+
+</x-dc>
+</body>
+</html>

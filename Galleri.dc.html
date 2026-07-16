@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/organic-d9ea468b-de7b-4188-b4ff-1169e295ce0e/styles.css">
+  <script src="_ds/organic-d9ea468b-de7b-4188-b4ff-1169e295ce0e/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    body a { color: var(--color-accent-2-700); }
+    body a:hover { color: var(--color-accent-2-900); }
+    .site-nav a[aria-current="page"] { color: var(--color-accent-2-700); }
+    .site-nav a:hover { color: var(--color-accent-2-700); }
+    .cta-primary { background: var(--color-accent-2-600); color: var(--color-bg); }
+    .cta-primary:hover { background: var(--color-accent-2-700); }
+    .cta-primary:active { background: var(--color-accent-2-800); }
+  </style>
+</helmet>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 var(--space-6)">
+  <nav class="nav site-nav">
+    <a class="nav-brand" href="./index.dc.html">Eas Eva-Marie</a>
+    <a href="./index.dc.html">Hem</a>
+    <a href="./Om.dc.html">Om mig</a>
+    <a href="./Galleri.dc.html" aria-current="page">Galleri</a>
+    <a href="./Kontakt.dc.html">Kontakt</a>
+    <a class="btn btn-primary cta-primary" href="./Kontakt.dc.html">Kontakta mig</a>
+  </nav>
+</div>
+
+<div style="max-width:1200px;margin:0 auto;padding:var(--space-8) var(--space-6)">
+
+  <section>
+    <h6 style="color:var(--color-accent-2-700)">Galleri</h6>
+    <h1 style="max-width:16ch">Ett urval av plagg jag har sytt</h1>
+    <p style="font-size:16px;opacity:0.85;max-width:56ch">Bläddra bland tidigare arbeten och filtrera på kategori för att se exempel inom just det du funderar på.</p>
+  </section>
+
+  <section style="margin-top:var(--space-4);display:flex;gap:var(--space-2);flex-wrap:wrap">
+    <sc-for list="{{ filters }}" as="f" hint-placeholder-count="6">
+      <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.label }}</button>
+    </sc-for>
+  </section>
+
+  <section style="margin-top:var(--space-6);display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4)">
+    <sc-for list="{{ items }}" as="it" hint-placeholder-count="8">
+      <figure style="margin:0">
+        <image-slot id="{{ it.id }}" shape="rounded" radius="20" placeholder="{{ it.label }}" style="width:100%;height:230px"></image-slot>
+        <figcaption style="display:flex;justify-content:space-between;align-items:center;margin-top:var(--space-2)">
+          <span>{{ it.label }}</span>
+          <span class="tag tag-accent-2">{{ it.catLabel }}</span>
+        </figcaption>
+      </figure>
+    </sc-for>
+  </section>
+
+</div>
+
+<footer style="background:var(--color-surface);margin-top:calc(var(--space-8) * 2)">
+  <div style="max-width:1200px;margin:0 auto;padding:var(--space-6);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4)">
+    <div>
+      <div class="nav-brand">Eas Eva-Marie</div>
+      <p class="text-muted" style="margin-top:var(--space-2)">Sömnad på beställning, med omtanke för varje detalj.</p>
+    </div>
+    <div style="display:flex;gap:var(--space-6);flex-wrap:wrap">
+      <a href="./Om.dc.html">Om mig</a>
+      <a href="./Galleri.dc.html">Galleri</a>
+      <a href="./Kontakt.dc.html">Kontakt</a>
+      <a href="./Kontakt.dc.html">hej@easevamarie.se</a>
+    </div>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { filter: 'alla' };
+
+  categories = [
+    { value: 'alla', label: 'Alla' },
+    { value: 'balklanning', label: 'Balklänning' },
+    { value: 'brollopsklanning', label: 'Bröllopsklänning' },
+    { value: 'barnklader', label: 'Barnkläder' },
+    { value: 'andringar', label: 'Ändringar & lagning' },
+    { value: 'vardag', label: 'Vardagsplagg' },
+    { value: 'annat', label: 'Annat' },
+  ];
+
+  items = [
+    { id: 'gal-balklanning-1', cat: 'balklanning', catLabel: 'Balklänning', label: 'Balklänning i salvia' },
+    { id: 'gal-balklanning-2', cat: 'balklanning', catLabel: 'Balklänning', label: 'Balklänning med spets' },
+    { id: 'gal-balklanning-3', cat: 'balklanning', catLabel: 'Balklänning', label: 'Balklänning, a-linje' },
+    { id: 'gal-brollop-1', cat: 'brollopsklanning', catLabel: 'Bröllopsklänning', label: 'Bröllopsklänning, enkel' },
+    { id: 'gal-brollop-2', cat: 'brollopsklanning', catLabel: 'Bröllopsklänning', label: 'Bröllopsklänning med släp' },
+    { id: 'gal-brollop-3', cat: 'brollopsklanning', catLabel: 'Bröllopsklänning', label: 'Bröllopsklänning, spets' },
+    { id: 'gal-barn-1', cat: 'barnklader', catLabel: 'Barnkläder', label: 'Dopklänning' },
+    { id: 'gal-barn-2', cat: 'barnklader', catLabel: 'Barnkläder', label: 'Finkläder, barn' },
+    { id: 'gal-barn-3', cat: 'barnklader', catLabel: 'Barnkläder', label: 'Vardagsklänning, barn' },
+    { id: 'gal-andring-1', cat: 'andringar', catLabel: 'Ändringar & lagning', label: 'Uppsydd kavaj' },
+    { id: 'gal-andring-2', cat: 'andringar', catLabel: 'Ändringar & lagning', label: 'Ändrad klänning' },
+    { id: 'gal-vardag-1', cat: 'vardag', catLabel: 'Vardagsplagg', label: 'Sommarklänning' },
+    { id: 'gal-vardag-2', cat: 'vardag', catLabel: 'Vardagsplagg', label: 'Linneskjorta' },
+    { id: 'gal-vardag-3', cat: 'vardag', catLabel: 'Vardagsplagg', label: 'Kjol i lin' },
+    { id: 'gal-annat-1', cat: 'annat', catLabel: 'Annat', label: 'Kudde & textilinredning' },
+    { id: 'gal-annat-2', cat: 'annat', catLabel: 'Annat', label: 'Väska i återbruk' },
+  ];
+
+  renderVals() {
+    const active = this.state.filter;
+    const filters = this.categories.map(c => ({
+      value: c.value,
+      label: c.label,
+      onClick: () => this.setState({ filter: c.value }),
+      style: c.value === active
+        ? { fontFamily: 'var(--font-heading)', fontSize: '14px', cursor: 'pointer', border: '1px solid transparent', borderRadius: '999px', padding: '8px 16px', background: 'var(--color-accent-2-600)', color: 'var(--color-bg)' }
+        : { fontFamily: 'var(--font-heading)', fontSize: '14px', cursor: 'pointer', border: '1px solid var(--color-divider)', borderRadius: '999px', padding: '8px 16px', background: 'transparent', color: 'var(--color-text)' },
+    }));
+    const items = active === 'alla' ? this.items : this.items.filter(i => i.cat === active);
+    return { filters, items };
+  }
+}
+
+</script>
+</body>
+</html>

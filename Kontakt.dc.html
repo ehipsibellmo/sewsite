@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/organic-d9ea468b-de7b-4188-b4ff-1169e295ce0e/styles.css">
+  <script src="_ds/organic-d9ea468b-de7b-4188-b4ff-1169e295ce0e/_ds_bundle.js"></script>
+  <style>
+    body a { color: var(--color-accent-2-700); }
+    body a:hover { color: var(--color-accent-2-900); }
+    .site-nav a[aria-current="page"] { color: var(--color-accent-2-700); }
+    .site-nav a:hover { color: var(--color-accent-2-700); }
+    .cta-primary { background: var(--color-accent-2-600); color: var(--color-bg); }
+    .cta-primary:hover { background: var(--color-accent-2-700); }
+    .cta-primary:active { background: var(--color-accent-2-800); }
+    details.faq summary::-webkit-details-marker { display: none; }
+  </style>
+</helmet>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 var(--space-6)">
+  <nav class="nav site-nav">
+    <a class="nav-brand" href="./index.dc.html">Eas Eva-Marie</a>
+    <a href="./index.dc.html">Hem</a>
+    <a href="./Om.dc.html">Om mig</a>
+    <a href="./Galleri.dc.html">Galleri</a>
+    <a href="./Kontakt.dc.html" aria-current="page">Kontakt</a>
+    <a class="btn btn-primary cta-primary" href="#kontaktformular">Kontakta mig</a>
+  </nav>
+</div>
+
+<div style="max-width:1200px;margin:0 auto;padding:var(--space-8) var(--space-6)">
+
+  <section>
+    <h6 style="color:var(--color-accent-2-700)">Kontakt</h6>
+    <h1 style="max-width:16ch">Berätta om ditt projekt</h1>
+    <p style="font-size:16px;opacity:0.85;max-width:56ch">Hör av dig så återkommer jag inom ett par dagar. Ju mer du berättar om tyg, tillfälle och tidsram, desto lättare är det för mig att ge dig ett bra svar direkt.</p>
+  </section>
+
+  <section style="margin-top:var(--space-6);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4)">
+    <div class="card elev-sm">
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--color-accent-2-100);color:var(--color-accent-2-800);display:flex;align-items:center;justify-content:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><path d="m22 6-10 7L2 6"></path></svg>
+      </div>
+      <div class="card-title">E-post</div>
+      <p class="card-body">hej@easevamarie.se</p>
+    </div>
+    <div class="card elev-sm">
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--color-accent-2-100);color:var(--color-accent-2-800);display:flex;align-items:center;justify-content:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      </div>
+      <div class="card-title">Instagram</div>
+      <p class="card-body">@easevamarie.syateljé</p>
+    </div>
+    <div class="card elev-sm">
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--color-accent-2-100);color:var(--color-accent-2-800);display:flex;align-items:center;justify-content:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+      </div>
+      <div class="card-title">Boka tid</div>
+      <p class="card-body">Boka ett kort samtal eller besök i ateljén.</p>
+    </div>
+  </section>
+
+  <section id="kontaktformular" style="margin-top:calc(var(--space-8) * 1.6);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8)">
+    <div>
+      <h2>Skriv till mig</h2>
+      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+        <div class="card elev-sm" style="background:var(--color-accent-2-100)">
+          <div class="card-title" style="color:var(--color-accent-2-800)">Tack för ditt meddelande!</div>
+          <p class="card-body">Jag hör av mig så snart jag kan.</p>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:var(--space-3)">
+          <div class="field">
+            <label for="namn">Namn</label>
+            <input class="input" id="namn" type="text" required="{{ true }}"></input>
+          </div>
+          <div class="field">
+            <label for="epost">E-post</label>
+            <input class="input" id="epost" type="email" required="{{ true }}"></input>
+          </div>
+          <div class="field">
+            <label for="typ">Typ av plagg</label>
+            <select class="input" id="typ">
+              <option>Balklänning</option>
+              <option>Bröllopsklänning</option>
+              <option>Barnkläder</option>
+              <option>Ändring/lagning</option>
+              <option>Vardagsplagg</option>
+              <option>Annat</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="meddelande">Meddelande</label>
+            <textarea class="input" id="meddelande" rows="4"></textarea>
+          </div>
+          <button class="btn btn-primary cta-primary btn-block" type="submit">Skicka förfrågan</button>
+        </form>
+      </sc-if>
+    </div>
+
+    <div>
+      <h2>Priser</h2>
+      <p style="opacity:0.85">Varje plagg är unikt, så priset sätts individuellt utifrån tyg, mått och tidsåtgång. Här är en fingervisning:</p>
+      <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-3)">
+        <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider)"><span>Ändringar &amp; lagning</span><span>från 250 kr</span></div>
+        <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider)"><span>Barnkläder</span><span>från 600 kr</span></div>
+        <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider)"><span>Vardagsplagg</span><span>från 900 kr</span></div>
+        <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider)"><span>Balklänning</span><span>från 2 500 kr</span></div>
+        <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0"><span>Bröllopsklänning</span><span>från 4 500 kr</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:calc(var(--space-8) * 1.6);max-width:760px">
+    <h2>Vanliga frågor</h2>
+    <details class="faq" style="border-bottom:1px solid var(--color-divider);padding:var(--space-3) 0">
+      <summary style="cursor:pointer;font-family:var(--font-heading);font-size:16px">Hur lång är leveranstiden?</summary>
+      <p class="text-muted" style="margin-top:var(--space-2)">Vanligtvis 3–6 veckor beroende på plagg och tid på året. Hör av dig i god tid inför en särskild dag.</p>
+    </details>
+    <details class="faq" style="border-bottom:1px solid var(--color-divider);padding:var(--space-3) 0">
+      <summary style="cursor:pointer;font-family:var(--font-heading);font-size:16px">Kan jag komma med eget tyg?</summary>
+      <p class="text-muted" style="margin-top:var(--space-2)">Absolut! Har du redan ett tyg eller plagg du vill utgå ifrån går det oftast bra.</p>
+    </details>
+    <details class="faq" style="border-bottom:1px solid var(--color-divider);padding:var(--space-3) 0">
+      <summary style="cursor:pointer;font-family:var(--font-heading);font-size:16px">Hur många provsömnader ingår?</summary>
+      <p class="text-muted" style="margin-top:var(--space-2)">De flesta plagg provas 1–2 gånger, mer komplicerade klänningar oftare, tills allt sitter rätt.</p>
+    </details>
+    <details class="faq" style="padding:var(--space-3) 0">
+      <summary style="cursor:pointer;font-family:var(--font-heading);font-size:16px">Syr du åt kunder utanför Lund?</summary>
+      <p class="text-muted" style="margin-top:var(--space-2)">Ja, mått kan tas via video eller egen mätguide, och färdiga plagg skickas hem.</p>
+    </details>
+  </section>
+
+</div>
+
+<footer style="background:var(--color-surface);margin-top:calc(var(--space-8) * 2)">
+  <div style="max-width:1200px;margin:0 auto;padding:var(--space-6);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4)">
+    <div>
+      <div class="nav-brand">Eas Eva-Marie</div>
+      <p class="text-muted" style="margin-top:var(--space-2)">Sömnad på beställning, med omtanke för varje detalj.</p>
+    </div>
+    <div style="display:flex;gap:var(--space-6);flex-wrap:wrap">
+      <a href="./Om.dc.html">Om mig</a>
+      <a href="./Galleri.dc.html">Galleri</a>
+      <a href="./Kontakt.dc.html">Kontakt</a>
+      <a href="./Kontakt.dc.html">hej@easevamarie.se</a>
+    </div>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { submitted: false };
+  renderVals() {
+    return {
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); },
+    };
+  }
+}
+
+</script>
+</body>
+</html>
